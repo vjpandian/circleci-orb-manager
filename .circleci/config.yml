@@ -6,7 +6,7 @@ jobs:
       - image: circleci/circleci-cli:latest
     steps:
       - checkout
-      - run: circleci orb create vjpandian/circleci-server-manager --no-prompt --token $CIRCLECI_TOKEN
+      - run: circleci orb create vjpandian/circleci-server-manager --no-prompt --token $CIRCLE_TOKEN
 workflows: 
   main:
     jobs:
