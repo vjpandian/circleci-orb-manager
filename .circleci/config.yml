@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  orb-create:
+    docker:
+      - image: circleci/circleci-cli:latest
+    steps:
+      - checkout
+      - run: circleci orb create vjpandian/circleci-server-manager --no-prompt --token $CIRCLECI_TOKEN
+workflows: 
+  main:
+    jobs:
+      - orb-create:
+          context: org-global
